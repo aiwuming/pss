@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e852e57374c5482894f340b4316cc91e" Name="Diagram1" ZoomLevel="124">
+        <EntityTypeShape EntityType="BarneauModel.Capacity" Width="1.5" PointX="5.25" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.Customer" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.Danage" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.Enterrequest" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.EnterWarehouse" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.Goods" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.Goodstype" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.IssueWarehouse" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.mobilize" Width="1.5" PointX="8.25" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.Retruerequest" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.Staff" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.Supplier" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.User" Width="1.5" PointX="3.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="BarneauModel.WareHouse" Width="1.5" PointX="3" PointY="25.5" IsExpanded="true" />
+        <AssociationConnector Association="BarneauModel.FK_Capacity_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_Capacity_WareHouse" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_IssueWarehouse_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_Danage_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_Danage_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_Enterrequest_EnterWarehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_Enterrequest_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_EnterWarehouse_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_EnterWarehouse_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_EnterWarehouse_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_Goods_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_IssueWarehouse_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_mobilize_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_IssueWarehouse_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_Retruerequest_IssueWarehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_mobilize_WareHouse" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_mobilize_WareHouse1" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_Retruerequest_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="BarneauModel.FK_WareHouse_Staff" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

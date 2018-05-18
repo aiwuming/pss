@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BarneauModelStoreContainer" CdmEntityContainer="BarneauEntities1">
+    <EntitySetMapping Name="Capacity">
+      <EntityTypeMapping TypeName="BarneauModel.Capacity">
+        <MappingFragment StoreEntitySet="Capacity">
+          <ScalarProperty Name="Caid" ColumnName="Caid" />
+          <ScalarProperty Name="Gdid" ColumnName="Gdid" />
+          <ScalarProperty Name="Wid" ColumnName="Wid" />
+          <ScalarProperty Name="Ccount" ColumnName="Ccount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer">
+      <EntityTypeMapping TypeName="BarneauModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+          <ScalarProperty Name="Cname" ColumnName="Cname" />
+          <ScalarProperty Name="Ctelep" ColumnName="Ctelep" />
+          <ScalarProperty Name="Caddress" ColumnName="Caddress" />
+          <ScalarProperty Name="Cptc" ColumnName="Cptc" />
+          <ScalarProperty Name="Cemail" ColumnName="Cemail" />
+          <ScalarProperty Name="Cban" ColumnName="Cban" />
+          <ScalarProperty Name="Cremarks" ColumnName="Cremarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Danage">
+      <EntityTypeMapping TypeName="BarneauModel.Danage">
+        <MappingFragment StoreEntitySet="Danage">
+          <ScalarProperty Name="Did" ColumnName="Did" />
+          <ScalarProperty Name="Dtate" ColumnName="Dtate" />
+          <ScalarProperty Name="Gdid" ColumnName="Gdid" />
+          <ScalarProperty Name="Stid" ColumnName="Stid" />
+          <ScalarProperty Name="Dremarks" ColumnName="Dremarks" />
+          <ScalarProperty Name="Dcount" ColumnName="Dcount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enterrequest">
+      <EntityTypeMapping TypeName="BarneauModel.Enterrequest">
+        <MappingFragment StoreEntitySet="Enterrequest">
+          <ScalarProperty Name="Enid" ColumnName="Enid" />
+          <ScalarProperty Name="Enmoney" ColumnName="Enmoney" />
+          <ScalarProperty Name="Enreason" ColumnName="Enreason" />
+          <ScalarProperty Name="Stid" ColumnName="Stid" />
+          <ScalarProperty Name="Enremarks" ColumnName="Enremarks" />
+          <ScalarProperty Name="Eid" ColumnName="Eid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnterWarehouse">
+      <EntityTypeMapping TypeName="BarneauModel.EnterWarehouse">
+        <MappingFragment StoreEntitySet="EnterWarehouse">
+          <ScalarProperty Name="Eid" ColumnName="Eid" />
+          <ScalarProperty Name="Sid" ColumnName="Sid" />
+          <ScalarProperty Name="Edate" ColumnName="Edate" />
+          <ScalarProperty Name="Eamount" ColumnName="Eamount" />
+          <ScalarProperty Name="Stid" ColumnName="Stid" />
+          <ScalarProperty Name="Eremarks" ColumnName="Eremarks" />
+          <ScalarProperty Name="Gdid" ColumnName="Gdid" />
+          <ScalarProperty Name="Ecount" ColumnName="Ecount" />
+          <ScalarProperty Name="Estate" ColumnName="Estate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods">
+      <EntityTypeMapping TypeName="BarneauModel.Goods">
+        <MappingFragment StoreEntitySet="Goods">
+          <ScalarProperty Name="Gdid" ColumnName="Gdid" />
+          <ScalarProperty Name="Gdname" ColumnName="Gdname" />
+          <ScalarProperty Name="Gid" ColumnName="Gid" />
+          <ScalarProperty Name="Gunit" ColumnName="Gunit" />
+          <ScalarProperty Name="Gpt" ColumnName="Gpt" />
+          <ScalarProperty Name="Sid" ColumnName="Sid" />
+          <ScalarProperty Name="Gpl" ColumnName="Gpl" />
+          <ScalarProperty Name="Grp" ColumnName="Grp" />
+          <ScalarProperty Name="Gremarks" ColumnName="Gremarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goodstype">
+      <EntityTypeMapping TypeName="BarneauModel.Goodstype">
+        <MappingFragment StoreEntitySet="Goodstype">
+          <ScalarProperty Name="Gid" ColumnName="Gid" />
+          <ScalarProperty Name="Gname" ColumnName="Gname" />
+          <ScalarProperty Name="Gclass" ColumnName="Gclass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IssueWarehouse">
+      <EntityTypeMapping TypeName="BarneauModel.IssueWarehouse">
+        <MappingFragment StoreEntitySet="IssueWarehouse">
+          <ScalarProperty Name="Iwid" ColumnName="Iwid" />
+          <ScalarProperty Name="Cid" ColumnName="Cid" />
+          <ScalarProperty Name="Iwdate" ColumnName="Iwdate" />
+          <ScalarProperty Name="Iwamount" ColumnName="Iwamount" />
+          <ScalarProperty Name="Stid" ColumnName="Stid" />
+          <ScalarProperty Name="Iwremarks" ColumnName="Iwremarks" />
+          <ScalarProperty Name="Gdid" ColumnName="Gdid" />
+          <ScalarProperty Name="Icount" ColumnName="Icount" />
+          <ScalarProperty Name="Estate" ColumnName="Estate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mobilize">
+      <EntityTypeMapping TypeName="BarneauModel.mobilize">
+        <MappingFragment StoreEntitySet="mobilize">
+          <ScalarProperty Name="Mid" ColumnName="Mid" />
+          <ScalarProperty Name="Mdate" ColumnName="Mdate" />
+          <ScalarProperty Name="WidA" ColumnName="WidA" />
+          <ScalarProperty Name="WidB" ColumnName="WidB" />
+          <ScalarProperty Name="Gdid" ColumnName="Gdid" />
+          <ScalarProperty Name="Mreason" ColumnName="Mreason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Retruerequest">
+      <EntityTypeMapping TypeName="BarneauModel.Retruerequest">
+        <MappingFragment StoreEntitySet="Retruerequest">
+          <ScalarProperty Name="Rid" ColumnName="Rid" />
+          <ScalarProperty Name="Rmoney" ColumnName="Rmoney" />
+          <ScalarProperty Name="Rreason" ColumnName="Rreason" />
+          <ScalarProperty Name="Stid" ColumnName="Stid" />
+          <ScalarProperty Name="Rremarks" ColumnName="Rremarks" />
+          <ScalarProperty Name="Rstate" ColumnName="Rstate" />
+          <ScalarProperty Name="Iwid" ColumnName="Iwid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staff">
+      <EntityTypeMapping TypeName="BarneauModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="Stid" ColumnName="Stid" />
+          <ScalarProperty Name="Stname" ColumnName="Stname" />
+          <ScalarProperty Name="Stsex" ColumnName="Stsex" />
+          <ScalarProperty Name="Stage" ColumnName="Stage" />
+          <ScalarProperty Name="Stwayes" ColumnName="Stwayes" />
+          <ScalarProperty Name="Sttelep" ColumnName="Sttelep" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplier">
+      <EntityTypeMapping TypeName="BarneauModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="Sid" ColumnName="Sid" />
+          <ScalarProperty Name="Sname" ColumnName="Sname" />
+          <ScalarProperty Name="Stelep" ColumnName="Stelep" />
+          <ScalarProperty Name="Saddress" ColumnName="Saddress" />
+          <ScalarProperty Name="Sptc" ColumnName="Sptc" />
+          <ScalarProperty Name="Semail" ColumnName="Semail" />
+          <ScalarProperty Name="Sban" ColumnName="Sban" />
+          <ScalarProperty Name="Sremarks" ColumnName="Sremarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BarneauModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="BarneauModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Uid" ColumnName="Uid" />
+          <ScalarProperty Name="Uname" ColumnName="Uname" />
+          <ScalarProperty Name="Upwd" ColumnName="Upwd" />
+          <ScalarProperty Name="Ucall" ColumnName="Ucall" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WareHouse">
+      <EntityTypeMapping TypeName="BarneauModel.WareHouse">
+        <MappingFragment StoreEntitySet="WareHouse">
+          <ScalarProperty Name="Wid" ColumnName="Wid" />
+          <ScalarProperty Name="Wname" ColumnName="Wname" />
+          <ScalarProperty Name="Stid" ColumnName="Stid" />
+          <ScalarProperty Name="Waddress" ColumnName="Waddress" />
+          <ScalarProperty Name="Wtelep" ColumnName="Wtelep" />
+          <ScalarProperty Name="Wcapacity" ColumnName="Wcapacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="BarneauModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="BarneauModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="BarneauModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="BarneauModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BarneauModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="BarneauModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BarneauModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BarneauModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BarneauModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

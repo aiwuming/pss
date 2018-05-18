@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "出库订单";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="page-header">
+    <h1><small>出库订单</small></h1>
+</div>
+
+<table class="table table-hover ">
+    <tr>
+        <td>客户</td>
+        <td>交易时间</td>
+        <td>交易金额</td>
+        <td>负责人</td>
+        <td>商品</td>
+        <td>数量</td>
+        <td>备注</td>
+        <td>操作</td>
+    </tr>
+    <tr>
+        <td>
+            A
+        </td>@*客户*@
+        <td>
+            A
+        </td>@*交易时间*@
+        <td>
+            A
+        </td>@*交易金额*@
+        <td>
+            A
+        </td>@*负责人*@
+        <td>
+            A
+        </td>@*商品*@
+        <td>
+            A
+        </td>@*数量*@
+        <td>
+            A
+        </td>@*备注*@
+        <td>
+            <button type="button" class="btn btn-danger">签收</button>
+        </td>@*操作*@
+    </tr>
+</table>
+
+
+<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+<script>window.jQuery || document.write('<script src="~/js/jquery-1.11.0.min.js"><\/script>')</script>
+<script type="text/javascript" src="~/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript">
+		$(function(){
+			$('.datepicker').datepicker({
+				language: 'zh-CN'
+			});
+		})
+</script>
+
+
+

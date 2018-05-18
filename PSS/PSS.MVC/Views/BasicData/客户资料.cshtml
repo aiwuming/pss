@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "客户资料";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" page-header"><h1><small>客户资料</small></h1></div>
+
+<form class="form-inline" role="form">
+    <div class="form-group">
+        客户编号：<input id="Text1" type="text" class="form-control" placeholder="请输入客户编号" />
+    </div>
+    <div class="form-group">
+        客户名称： <input id="Text2" type="text" class="form-control" placeholder="请输入客户名称" />
+    </div>
+</form>
+
+<button type="button" class="btn btn-info" style="margin-right:15px;">查 询</button>
+<button type="button" class="btn btn-success"><a href="/BasicData/添加客户资料">添 加</a></button>
+
+<table class="table table-hover" >
+    <tr>
+        <td>客户编号</td>
+        <td>客户名称</td>
+        <td>联系电话</td>
+        <td>联系人</td>
+        <td>联系</td>
+        <td>E-mail</td>
+        <td>银行账号</td>
+        <td>备注</td>
+        <td>操作</td>
+    </tr>
+    <tr>
+        <td>客户编号</td>
+        <td>客户名称</td>
+        <td>联系电话</td>
+        <td>联系人</td>
+        <td>联系地址</td>
+        <td>E-mail</td>
+        <td>银行卡号</td>
+        <td>备注</td>
+        <td>
+            <button type="button" class="btn btn-default"><a href="/BasicData/修改客户资料">修 改</a></button>
+            <button type="button" class="btn btn-default">删 除</button>
+        </td>
+    </tr>
+</table>
+

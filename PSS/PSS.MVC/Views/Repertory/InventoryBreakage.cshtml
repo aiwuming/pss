@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "InventoryBreakage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="page-header">
+    <h1>
+        <small>报损表</small>
+    </h1>
+
+</div>
+<form class="form-horizontal" role="form" style="padding-top:15px;padding-bottom:10px;">
+
+    <div class="form ">
+        <label  class="col-sm-1 control-label" style="width:45px;padding-right:0px;padding-left:0px;">部门:</label>
+        <div class="col-xs-1">
+            <select class="form-control " id="#"><option>所有</option></select>
+        </div>
+    </div>
+    <div class="form ">
+
+        <label class="col-sm-1 control-label" style="width:90px;padding-right:0px;">经手人:</label>
+           <div class="col-xs-1  ">
+               <select class="form-control " id="#"><option>所有</option></select>
+           </div>
+    </div>
+    <div class="form ">
+        <label class="col-sm-1 control-label" style="width:90px;padding-right:0px;">出库仓库:</label>
+        <div class="col-xs-1  ">
+            <select class="form-control " id="#"><option>所有</option></select>
+        </div>
+    </div>
+    <div class="form ">
+        <label class="col-sm-1 control-label" style="width:90px;padding-right:0px;">摘要:</label>
+        <div class="col-xs-1  ">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="摘要">
+        </div>
+    </div>
+    <div class="form ">
+        <label class="col-sm-1 control-label" style="width:90px;padding-right:0px;">附加说明:</label>
+        <div class="col-xs-1  ">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="附加说明">
+
+        </div>
+    </div>
+</form>
+<div>
+    <table class="table table-striped" style="margin-top:50px">
+        <tr>
+            <th>报损编号</th>
+            <th>报损仓库</th>
+            <th>报损日期</th>
+            <th>经手人</th>
+            <th>报损总金额</th>
+            <th>状态</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+    </table>
+</div>
+

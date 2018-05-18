@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BarneauModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Capacity">
+    <Key>
+      <PropertyRef Name="Caid" />
+    </Key>
+    <Property Name="Caid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gdid" Type="Int32" Nullable="false" />
+    <Property Name="Wid" Type="Int32" Nullable="false" />
+    <Property Name="Ccount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK_Capacity_Goods" FromRole="Capacity" ToRole="Goods" />
+    <NavigationProperty Name="WareHouse" Relationship="Self.FK_Capacity_WareHouse" FromRole="Capacity" ToRole="WareHouse" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Cid" />
+    </Key>
+    <Property Name="Cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Ctelep" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Caddress" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Cptc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Cemail" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Cban" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Cremarks" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="IssueWarehouse" Relationship="Self.FK_IssueWarehouse_Customer" FromRole="Customer" ToRole="IssueWarehouse" />
+  </EntityType>
+  <EntityType Name="Danage">
+    <Key>
+      <PropertyRef Name="Did" />
+    </Key>
+    <Property Name="Did" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dtate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Gdid" Type="Int32" Nullable="false" />
+    <Property Name="Stid" Type="Int32" Nullable="false" />
+    <Property Name="Dremarks" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Dcount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK_Danage_Goods" FromRole="Danage" ToRole="Goods" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_Danage_Staff" FromRole="Danage" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Enterrequest">
+    <Key>
+      <PropertyRef Name="Enid" />
+    </Key>
+    <Property Name="Enid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Enmoney" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Enreason" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Stid" Type="Int32" Nullable="false" />
+    <Property Name="Enremarks" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Eid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EnterWarehouse" Relationship="Self.FK_Enterrequest_EnterWarehouse" FromRole="Enterrequest" ToRole="EnterWarehouse" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_Enterrequest_Staff" FromRole="Enterrequest" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="EnterWarehouse">
+    <Key>
+      <PropertyRef Name="Eid" />
+    </Key>
+    <Property Name="Eid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sid" Type="Int32" Nullable="false" />
+    <Property Name="Edate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Eamount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Stid" Type="Int32" Nullable="false" />
+    <Property Name="Eremarks" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gdid" Type="Int32" Nullable="false" />
+    <Property Name="Ecount" Type="Int32" Nullable="false" />
+    <Property Name="Estate" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Enterrequest" Relationship="Self.FK_Enterrequest_EnterWarehouse" FromRole="EnterWarehouse" ToRole="Enterrequest" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK_EnterWarehouse_Goods" FromRole="EnterWarehouse" ToRole="Goods" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_EnterWarehouse_Staff" FromRole="EnterWarehouse" ToRole="Staff" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_EnterWarehouse_Supplier" FromRole="EnterWarehouse" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="Gdid" />
+    </Key>
+    <Property Name="Gdid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gdname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gid" Type="Int32" Nullable="false" />
+    <Property Name="Gunit" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gpt" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Sid" Type="Int32" Nullable="false" />
+    <Property Name="Gpl" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Grp" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Gremarks" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Capacity" Relationship="Self.FK_Capacity_Goods" FromRole="Goods" ToRole="Capacity" />
+    <NavigationProperty Name="Danage" Relationship="Self.FK_Danage_Goods" FromRole="Goods" ToRole="Danage" />
+    <NavigationProperty Name="EnterWarehouse" Relationship="Self.FK_EnterWarehouse_Goods" FromRole="Goods" ToRole="EnterWarehouse" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_Goods_Supplier" FromRole="Goods" ToRole="Supplier" />
+    <NavigationProperty Name="IssueWarehouse" Relationship="Self.FK_IssueWarehouse_Goods" FromRole="Goods" ToRole="IssueWarehouse" />
+    <NavigationProperty Name="mobilize" Relationship="Self.FK_mobilize_Goods" FromRole="Goods" ToRole="mobilize" />
+  </EntityType>
+  <EntityType Name="Goodstype">
+    <Key>
+      <PropertyRef Name="Gid" />
+    </Key>
+    <Property Name="Gid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gclass" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IssueWarehouse">
+    <Key>
+      <PropertyRef Name="Iwid" />
+    </Key>
+    <Property Name="Iwid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cid" Type="Int32" Nullable="false" />
+    <Property Name="Iwdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Iwamount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Stid" Type="Int32" Nullable="false" />
+    <Property Name="Iwremarks" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gdid" Type="Int32" Nullable="false" />
+    <Property Name="Icount" Type="Int32" Nullable="false" />
+    <Property Name="Estate" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_IssueWarehouse_Customer" FromRole="IssueWarehouse" ToRole="Customer" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK_IssueWarehouse_Goods" FromRole="IssueWarehouse" ToRole="Goods" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_IssueWarehouse_Staff" FromRole="IssueWarehouse" ToRole="Staff" />
+    <NavigationProperty Name="Retruerequest" Relationship="Self.FK_Retruerequest_IssueWarehouse" FromRole="IssueWarehouse" ToRole="Retruerequest" />
+  </EntityType>
+  <EntityType Name="mobilize">
+    <Key>
+      <PropertyRef Name="Mid" />
+    </Key>
+    <Property Name="Mid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WidA" Type="Int32" Nullable="false" />
+    <Property Name="WidB" Type="Int32" Nullable="false" />
+    <Property Name="Gdid" Type="Int32" Nullable="false" />
+    <Property Name="Mreason" Type="String" MaxLength="120" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK_mobilize_Goods" FromRole="mobilize" ToRole="Goods" />
+    <NavigationProperty Name="WareHouse" Relationship="Self.FK_mobilize_WareHouse" FromRole="mobilize" ToRole="WareHouse" />
+    <NavigationProperty Name="WareHouse1" Relationship="Self.FK_mobilize_WareHouse1" FromRole="mobilize" ToRole="WareHouse" />
+  </EntityType>
+  <EntityType Name="Retruerequest">
+    <Key>
+      <PropertyRef Name="Rid" />
+    </Key>
+    <Property Name="Rid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rmoney" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Rreason" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Stid" Type="Int32" Nullable="false" />
+    <Property Name="Rremarks" Type="String" MaxLength="120" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Rstate" Type="Int32" Nullable="false" />
+    <Property Name="Iwid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="IssueWarehouse" Relationship="Self.FK_Retruerequest_IssueWarehouse" FromRole="Retruerequest" ToRole="IssueWarehouse" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_Retruerequest_Staff" FromRole="Retruerequest" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="Stid" />
+    </Key>
+    <Property Name="Stid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Stname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Stsex" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Stage" Type="Int32" Nullable="false" />
+    <Property Name="Stwayes" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Sttelep" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Danage" Relationship="Self.FK_Danage_Staff" FromRole="Staff" ToRole="Danage" />
+    <NavigationProperty Name="Enterrequest" Relationship="Self.FK_Enterrequest_Staff" FromRole="Staff" ToRole="Enterrequest" />
+    <NavigationProperty Name="EnterWarehouse" Relationship="Self.FK_EnterWarehouse_Staff" FromRole="Staff" ToRole="EnterWarehouse" />
+    <NavigationProperty Name="IssueWarehouse" Relationship="Self.FK_IssueWarehouse_Staff" FromRole="Staff" ToRole="IssueWarehouse" />
+    <NavigationProperty Name="Retruerequest" Relationship="Self.FK_Retruerequest_Staff" FromRole="Staff" ToRole="Retruerequest" />
+    <NavigationProperty Name="WareHouse" Relationship="Self.FK_WareHouse_Staff" FromRole="Staff" ToRole="WareHouse" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Sid" />
+    </Key>
+    <Property Name="Sid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Stelep" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Saddress" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Sptc" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Semail" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Sban" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Sremarks" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="EnterWarehouse" Relationship="Self.FK_EnterWarehouse_Supplier" FromRole="Supplier" ToRole="EnterWarehouse" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK_Goods_Supplier" FromRole="Supplier" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Uid" />
+    </Key>
+    <Property Name="Uid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uname" Type="String" MaxLength="120" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Upwd" Type="String" MaxLength="120" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Ucall" Type="String" MaxLength="120" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WareHouse">
+    <Key>
+      <PropertyRef Name="Wid" />
+    </Key>
+    <Property Name="Wid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Wname" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Stid" Type="Int32" Nullable="false" />
+    <Property Name="Waddress" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Wtelep" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Wcapacity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Capacity" Relationship="Self.FK_Capacity_WareHouse" FromRole="WareHouse" ToRole="Capacity" />
+    <NavigationProperty Name="mobilize" Relationship="Self.FK_mobilize_WareHouse" FromRole="WareHouse" ToRole="mobilize" />
+    <NavigationProperty Name="mobilize1" Relationship="Self.FK_mobilize_WareHouse1" FromRole="WareHouse" ToRole="mobilize" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_WareHouse_Staff" FromRole="WareHouse" ToRole="Staff" />
+  </EntityType>
+  <Association Name="FK_Capacity_Goods">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+    <End Role="Capacity" Type="Self.Capacity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="Gdid" />
+      </Principal>
+      <Dependent Role="Capacity">
+        <PropertyRef Name="Gdid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Capacity_WareHouse">
+    <End Role="WareHouse" Type="Self.WareHouse" Multiplicity="1" />
+    <End Role="Capacity" Type="Self.Capacity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WareHouse">
+        <PropertyRef Name="Wid" />
+      </Principal>
+      <Dependent Role="Capacity">
+        <PropertyRef Name="Wid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IssueWarehouse_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="IssueWarehouse" Type="Self.IssueWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Cid" />
+      </Principal>
+      <Dependent Role="IssueWarehouse">
+        <PropertyRef Name="Cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Danage_Goods">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+    <End Role="Danage" Type="Self.Danage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="Gdid" />
+      </Principal>
+      <Dependent Role="Danage">
+        <PropertyRef Name="Gdid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Danage_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Danage" Type="Self.Danage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="Stid" />
+      </Principal>
+      <Dependent Role="Danage">
+        <PropertyRef Name="Stid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enterrequest_EnterWarehouse">
+    <End Role="EnterWarehouse" Type="Self.EnterWarehouse" Multiplicity="1" />
+    <End Role="Enterrequest" Type="Self.Enterrequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EnterWarehouse">
+        <PropertyRef Name="Eid" />
+      </Principal>
+      <Dependent Role="Enterrequest">
+        <PropertyRef Name="Eid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enterrequest_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Enterrequest" Type="Self.Enterrequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="Stid" />
+      </Principal>
+      <Dependent Role="Enterrequest">
+        <PropertyRef Name="Stid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EnterWarehouse_Goods">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+    <End Role="EnterWarehouse" Type="Self.EnterWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="Gdid" />
+      </Principal>
+      <Dependent Role="EnterWarehouse">
+        <PropertyRef Name="Gdid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EnterWarehouse_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="EnterWarehouse" Type="Self.EnterWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="Stid" />
+      </Principal>
+      <Dependent Role="EnterWarehouse">
+        <PropertyRef Name="Stid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EnterWarehouse_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="EnterWarehouse" Type="Self.EnterWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Sid" />
+      </Principal>
+      <Dependent Role="EnterWarehouse">
+        <PropertyRef Name="Sid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Goods_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="Goods" Type="Self.Goods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Sid" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="Sid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IssueWarehouse_Goods">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+    <End Role="IssueWarehouse" Type="Self.IssueWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="Gdid" />
+      </Principal>
+      <Dependent Role="IssueWarehouse">
+        <PropertyRef Name="Gdid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mobilize_Goods">
+    <End Role="Goods" Type="Self.Goods" Multiplicity="1" />
+    <End Role="mobilize" Type="Self.mobilize" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="Gdid" />
+      </Principal>
+      <Dependent Role="mobilize">
+        <PropertyRef Name="Gdid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IssueWarehouse_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="IssueWarehouse" Type="Self.IssueWarehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="Stid" />
+      </Principal>
+      <Dependent Role="IssueWarehouse">
+        <PropertyRef Name="Stid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Retruerequest_IssueWarehouse">
+    <End Role="IssueWarehouse" Type="Self.IssueWarehouse" Multiplicity="1" />
+    <End Role="Retruerequest" Type="Self.Retruerequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IssueWarehouse">
+        <PropertyRef Name="Iwid" />
+      </Principal>
+      <Dependent Role="Retruerequest">
+        <PropertyRef Name="Iwid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mobilize_WareHouse">
+    <End Role="WareHouse" Type="Self.WareHouse" Multiplicity="1" />
+    <End Role="mobilize" Type="Self.mobilize" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WareHouse">
+        <PropertyRef Name="Wid" />
+      </Principal>
+      <Dependent Role="mobilize">
+        <PropertyRef Name="WidA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mobilize_WareHouse1">
+    <End Role="WareHouse" Type="Self.WareHouse" Multiplicity="1" />
+    <End Role="mobilize" Type="Self.mobilize" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WareHouse">
+        <PropertyRef Name="Wid" />
+      </Principal>
+      <Dependent Role="mobilize">
+        <PropertyRef Name="WidB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Retruerequest_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Retruerequest" Type="Self.Retruerequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="Stid" />
+      </Principal>
+      <Dependent Role="Retruerequest">
+        <PropertyRef Name="Stid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WareHouse_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="WareHouse" Type="Self.WareHouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="Stid" />
+      </Principal>
+      <Dependent Role="WareHouse">
+        <PropertyRef Name="Stid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BarneauEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Capacity" EntityType="Self.Capacity" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" />
+    <EntitySet Name="Danage" EntityType="Self.Danage" />
+    <EntitySet Name="Enterrequest" EntityType="Self.Enterrequest" />
+    <EntitySet Name="EnterWarehouse" EntityType="Self.EnterWarehouse" />
+    <EntitySet Name="Goods" EntityType="Self.Goods" />
+    <EntitySet Name="Goodstype" EntityType="Self.Goodstype" />
+    <EntitySet Name="IssueWarehouse" EntityType="Self.IssueWarehouse" />
+    <EntitySet Name="mobilize" EntityType="Self.mobilize" />
+    <EntitySet Name="Retruerequest" EntityType="Self.Retruerequest" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="WareHouse" EntityType="Self.WareHouse" />
+    <AssociationSet Name="FK_Capacity_Goods" Association="Self.FK_Capacity_Goods">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Capacity" EntitySet="Capacity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Capacity_WareHouse" Association="Self.FK_Capacity_WareHouse">
+      <End Role="WareHouse" EntitySet="WareHouse" />
+      <End Role="Capacity" EntitySet="Capacity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssueWarehouse_Customer" Association="Self.FK_IssueWarehouse_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="IssueWarehouse" EntitySet="IssueWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Danage_Goods" Association="Self.FK_Danage_Goods">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Danage" EntitySet="Danage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Danage_Staff" Association="Self.FK_Danage_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Danage" EntitySet="Danage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enterrequest_EnterWarehouse" Association="Self.FK_Enterrequest_EnterWarehouse">
+      <End Role="EnterWarehouse" EntitySet="EnterWarehouse" />
+      <End Role="Enterrequest" EntitySet="Enterrequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enterrequest_Staff" Association="Self.FK_Enterrequest_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Enterrequest" EntitySet="Enterrequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EnterWarehouse_Goods" Association="Self.FK_EnterWarehouse_Goods">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="EnterWarehouse" EntitySet="EnterWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EnterWarehouse_Staff" Association="Self.FK_EnterWarehouse_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="EnterWarehouse" EntitySet="EnterWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EnterWarehouse_Supplier" Association="Self.FK_EnterWarehouse_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="EnterWarehouse" EntitySet="EnterWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Goods_Supplier" Association="Self.FK_Goods_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssueWarehouse_Goods" Association="Self.FK_IssueWarehouse_Goods">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="IssueWarehouse" EntitySet="IssueWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mobilize_Goods" Association="Self.FK_mobilize_Goods">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="mobilize" EntitySet="mobilize" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssueWarehouse_Staff" Association="Self.FK_IssueWarehouse_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="IssueWarehouse" EntitySet="IssueWarehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Retruerequest_IssueWarehouse" Association="Self.FK_Retruerequest_IssueWarehouse">
+      <End Role="IssueWarehouse" EntitySet="IssueWarehouse" />
+      <End Role="Retruerequest" EntitySet="Retruerequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mobilize_WareHouse" Association="Self.FK_mobilize_WareHouse">
+      <End Role="WareHouse" EntitySet="WareHouse" />
+      <End Role="mobilize" EntitySet="mobilize" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mobilize_WareHouse1" Association="Self.FK_mobilize_WareHouse1">
+      <End Role="WareHouse" EntitySet="WareHouse" />
+      <End Role="mobilize" EntitySet="mobilize" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Retruerequest_Staff" Association="Self.FK_Retruerequest_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Retruerequest" EntitySet="Retruerequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WareHouse_Staff" Association="Self.FK_WareHouse_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="WareHouse" EntitySet="WareHouse" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(BarneauModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(BarneauModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

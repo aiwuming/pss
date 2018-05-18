@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "商品分类";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" page-header"><h1><small>商品分类</small></h1></div>
+<form class="form-inline" role="form">
+    <div class="form-group" style="margin-right:15px;">
+        <label class="sr-only" for="exampleInputEmail1">编号</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="编号">
+    </div>
+    <div class="form-group" style="margin-right:15px;">
+        <label class="sr-only" for="exampleInputPassword2">名称</label>
+        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="名称">
+    </div>
+    <button type="button" class="btn btn-info" style="margin-right:15px;">查 询</button>
+    <button type="button" class="btn btn-success" ><a href="/BasicData/添加商品分类">添 加</a></button>
+</form >
+<br />
+    <table class="table table-hover" >
+        <tr>
+            <td>分类编号</td>
+            <td>分类名称</td>
+            <td>上级分类编号</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>A</td>
+            <td>A</td>
+            <td>
+                <button type="button" class="btn btn-default"><a href="/BasicData/修改商品分类">修 改</a></button>
+                <button type="button" class="btn btn-default">删 除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>A</td>
+            <td>A</td>
+            <td>
+                <button type="button" class="btn btn-default">修 改</button>
+                <button type="button" class="btn btn-default">删 除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>A</td>
+            <td>A</td>
+            <td>
+                <button type="button" class="btn btn-default">修 改</button>
+                <button type="button" class="btn btn-default">删 除</button>
+            </td>
+        </tr>
+    </table>
+

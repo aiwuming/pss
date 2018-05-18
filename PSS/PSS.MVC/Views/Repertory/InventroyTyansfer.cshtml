@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "InventroyTyansfer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-header">
+    <h1>
+        <small>库存调拨</small>
+    </h1>
+</div>
+
+<form class="form-horizontal" role="form" style="padding-top:15px;padding-bottom:10px;">
+    <div class="form ">
+        <label class="col-sm-1 control-label" style="width:50px;padding-right:0px;padding-left:0px;">编号:</label>
+        <div class="col-xs-2">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="编号">
+        </div>
+    </div>
+    <div class="form ">
+        <label class="col-sm-1 control-label" style="width:90px;padding-right:0px;">供货商:</label>
+        <div class="col-xs-2  ">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="供货商">
+        </div>
+    </div>
+    <div class="form ">
+        <label class="col-sm-1 control-label" style="width:90px;padding-right:0px;">创建人:</label>
+        <div class="col-xs-2  ">
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="创建人">
+        </div>
+    </div>
+    <div class="form ">
+        <label class="col-sm-1 control-label" style="width:90px;padding-right:0px;">状态:</label>
+        <div class="col-xs-2  ">
+            <select class="form-control " id="#"><option>所有</option></select>
+        </div>
+    </div>
+    <div class="form">
+        <div>
+            <button type="button" class="btn btn-info " style="width:100px">搜索</button>
+           
+        </div>
+    </div>
+</form>
+<div>
+    <table class="table table-striped" style="margin-top:50px">
+        <tr>
+            <th>调拨编号</th>
+            <th>调拨仓库</th>
+            <th>调入仓库</th>
+            <th>调拨日期</th>
+            <th>经手人</th>
+            <th>备注</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+    </table>
+</div>
+

@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "商品资料";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" page-header"><h1><small>商品资料</small></h1></div>
+
+<form class="form-inline" role="form">
+    <div class="form-group">
+        客户编号：<input id="Text1" type="text" class="form-control" placeholder="请输入客户编号" />
+    </div>
+    <div class="form-group">
+        拼音简写： <input id="Text2" type="text" class="form-control" placeholder="请输入拼音简写" />
+    </div>
+    <div class="form-group">
+        客户名称： <input id="Text3" type="text" class="form-control" placeholder="请输入客户名称" />
+    </div>
+</form>
+
+<button type="button" class="btn btn-info" style="margin-right:15px;">查 询</button>
+    <button type="button" class="btn btn-success"><a href="/BasicData/添加商品">添 加</a></button>
+
+<table class="table table-hover">
+    <tr>
+        <td>商品编号</td>
+        <td>商品名称</td>
+        <td>商品类型</td>
+        <td>单位</td>
+        <td>拼音简写</td>
+        <td>供应商</td>
+        <td>进价</td>
+        <td>零售价</td>
+        <td>备注</td>
+        <td>操作</td>
+    </tr>
+
+    <tr>
+        <td>商品编号</td>
+        <td>商品名称</td>
+        <td>商品类型</td>
+        <td>单位</td>
+        <td>拼音简写</td>
+        <td>供应商</td>
+        <td>进价</td>
+        <td>零售价</td>
+        <td>备注</td>
+        <td>
+            <button type="button" class="btn btn-default"><a href="/BasicData/修改商品资料">修 改</a></button>
+            <button type="button" class="btn btn-default">删 除</button>
+        </td>
+    </tr>
+
+</table>
